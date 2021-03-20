@@ -40,7 +40,7 @@ def track(
         # print(os.getcwd())
         mlflow.pyfunc.log_model(python_model = ml_app, # Specify the model to log
                                 artifact_path = "sk_model", # where to log it
-                                code_path = ['utils'], # local dependances
+                                code_path = ['src/utils'], # local dependances
                                conda_env = 'src/config/conda.yml') 
 #         mlflow.sklearn.log_model(model, "sk_models")   
 
