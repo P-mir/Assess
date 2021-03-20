@@ -42,7 +42,7 @@ def main():
     if os.path.exists(path):
         shutil.rmtree(path)
 
-    data = pd.read_csv('../data/breast_cancer.csv')
+    data = pd.read_csv('..\data\breast_cancer.csv')
     
     uploaded_file = st.file_uploader("Play with the demo or upload your own data (CSV format)", type=['csv'])
     if uploaded_file is not None:
