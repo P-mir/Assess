@@ -44,7 +44,7 @@ def main():
 
     FILE_DIR = os.path.dirname(os.path.abspath(__file__))
     PARENT_DIR = os.path.join(FILE_DIR, os.pardir) 
-    print(os.listdir(PARENT_DIR)
+    print(os.listdir(PARENT_DIR))
     DIR = os.path.join(PARENT_DIR,'data')
     #data = pd.read_csv(os.path.join(DIR,'breast_cancer.csv'))
     data = pd.read_csv('data/breast_cancer.csv'))
