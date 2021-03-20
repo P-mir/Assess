@@ -34,7 +34,7 @@ def track(
         mlflow.log_metrics(metrics)
         mlflow.log_params(params)
         mlflow.log_artifacts(artifacts_path)
-        print(os.listdir()
+        print(os.listdir())
                 
         ml_app = MLApplication(model, preprocessing)
         # print(os.getcwd())
