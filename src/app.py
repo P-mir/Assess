@@ -47,7 +47,7 @@ def main():
     print(os.listdir(PARENT_DIR))
     DIR = os.path.join(PARENT_DIR,'data')
     #data = pd.read_csv(os.path.join(DIR,'breast_cancer.csv'))
-    data = pd.read_csv('data/breast_cancer.csv'))
+    data = pd.read_csv('data/breast_cancer.csv')
 
     uploaded_file = st.file_uploader("Play with the demo or upload your own data (CSV format)", type=['csv'])
     if uploaded_file is not None:
