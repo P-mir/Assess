@@ -65,7 +65,7 @@ def main():
             preds = predict(model, preprocessing, x) 
             data['Predictions'] =  preds      
             st.write('Model trained, launching the MLFlow tracking server...')
-            Popen("mlflow ui")
+            Popen("mlflow ui", shell=True)
             st.write("[Click here to browse your results](http://localhost:5000)")
 
 
