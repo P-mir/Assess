@@ -12,7 +12,7 @@ import streamlit as st
 import requests
 import pandas as pd
 import io
-import train
+import src.train
 from src.train import fit, predict
 
 
