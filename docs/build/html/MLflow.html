@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MLflow module &#8212; ASSESS v1.0 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="MLutils module" href="MLutils.html" />
+    <link rel="prev" title="train module" href="train.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="MLutils.html" title="MLutils module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="train.html" title="train module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ASSESS v1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">MLflow module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-MLflow">
+<span id="mlflow-module"></span><h1>MLflow module<a class="headerlink" href="#module-MLflow" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="MLflow.MLApplication">
+<em class="property">class </em><code class="sig-prename descclassname">MLflow.</code><code class="sig-name descname">MLApplication</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">preprocessing</span></em><span class="sig-paren">)</span><a class="headerlink" href="#MLflow.MLApplication" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">mlflow.pyfunc.model.PythonModel</span></code></p>
+<p>Define the MLFlow “PythonModel”.
+This clas is used to deploy the model as a REST API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> – fitted model</p></li>
+<li><p><strong>preprocessing</strong> – fitted pipeline</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="MLflow.MLApplication.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">context</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#MLflow.MLApplication.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluates a pyfunc-compatible input and produces a pyfunc-compatible output.
+For more information about the pyfunc input/output API, see the <span class="xref std std-ref">pyfunc-inference-api</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>context</strong> – A <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonModelContext</span></code> instance containing artifacts that the model
+can use to perform inference.</p></li>
+<li><p><strong>model_input</strong> – A pyfunc-compatible input for the model to evaluate.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="MLflow.track">
+<code class="sig-prename descclassname">MLflow.</code><code class="sig-name descname">track</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">metrics</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">artifacts</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">model</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_engineering</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">preprocessing</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mlflow_dir</span><span class="o">=</span><span class="default_value">'./mlruns'</span></em>, <em class="sig-param"><span class="n">artifacts_path</span><span class="o">=</span><span class="default_value">'outputs/plots/mlflow_artifacts'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#MLflow.track" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ensure MLFlow Tracking.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metrics</strong> (<em>dict</em>) – Model’s metrics.</p></li>
+<li><p><strong>params</strong> (<em>dict</em>) – Best hyperparameters found.</p></li>
+<li><p><strong>artifacts</strong> – Plots.</p></li>
+<li><p><strong>model</strong> – fitted model.</p></li>
+<li><p><strong>feature_engineering</strong> – Not used for now.</p></li>
+<li><p><strong>preprocessing</strong> – Fitted pipeline.</p></li>
+<li><p><strong>mlflow_dir</strong> (<em>str</em>) – path describing where to store MLFlows runs. Defaults to ‘./mlruns’.</p></li>
+<li><p><strong>artifacts_path</strong> (<em>str</em>) – path of the artifacts to add to MLFlow. Defaults to “outputs/plots/mlflow_artifacts”.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="train.html"
+                        title="previous chapter">train module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="MLutils.html"
+                        title="next chapter">MLutils module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/MLflow.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="MLutils.html" title="MLutils module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="train.html" title="train module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ASSESS v1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">MLflow module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Patrick Guerin.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+    </div>
+  </body>
+</html>

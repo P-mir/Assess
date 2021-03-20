@@ -1,0 +1,15 @@
+artifact_uri: ./mlruns/0/c720b092e1bf4f85951159004b5c6be6/artifacts
+end_time: 1589902304148
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: c720b092e1bf4f85951159004b5c6be6
+run_uuid: c720b092e1bf4f85951159004b5c6be6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1589902304011
+status: 3
+tags: []
+user_id: pguerin

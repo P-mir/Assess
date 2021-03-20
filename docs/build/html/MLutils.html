@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MLutils module &#8212; ASSESS v1.0 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="MLflow module" href="MLflow.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="MLflow.html" title="MLflow module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ASSESS v1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">MLutils module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-MLutils">
+<span id="mlutils-module"></span><h1>MLutils module<a class="headerlink" href="#module-MLutils" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="MLutils.Classifier">
+<em class="property">class </em><code class="sig-prename descclassname">MLutils.</code><code class="sig-name descname">Classifier</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n_jobs</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#MLutils.Classifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#MLutils.Model" title="MLutils.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">MLutils.Model</span></code></a></p>
+<dl class="py method">
+<dt id="MLutils.Classifier.compute_metrics_and_graphs">
+<code class="sig-name descname">compute_metrics_and_graphs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pred</span></em>, <em class="sig-param"><span class="n">actual</span></em>, <em class="sig-param"><span class="n">output_path</span><span class="o">=</span><span class="default_value">'outputs/plots/mlflow_artifacts'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#MLutils.Classifier.compute_metrics_and_graphs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate model’s performance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pred</strong> (<em>list</em>) – List of predictions</p></li>
+<li><p><strong>actual</strong> (<em>list</em>) – List of labels</p></li>
+<li><p><strong>output_path</strong> (<em>str</em><em>, </em><em>optional</em>) – Path indicating where to store the plots. Defaults to “outputs/plots/mlflow_artifacts”.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="MLutils.Classifier.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#MLutils.Classifier.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit a classifier using a cross-validated grid search.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>DataFrame</em>) – Features</p></li>
+<li><p><strong>y</strong> (<em>DataFrame</em>) – Target</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="MLutils.Model">
+<em class="property">class </em><code class="sig-prename descclassname">MLutils.</code><code class="sig-name descname">Model</code><a class="headerlink" href="#MLutils.Model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Parent class of all model objects.
+2 classes inherit: Regressor and Classfier classes</p>
+<dl class="py method">
+<dt id="MLutils.Model.getModel">
+<em class="property">static </em><code class="sig-name descname">getModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">task</span></em>, <em class="sig-param"><span class="n">n_jobs</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#MLutils.Model.getModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="MLutils.Preprocess">
+<em class="property">class </em><code class="sig-prename descclassname">MLutils.</code><code class="sig-name descname">Preprocess</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scaler</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">numeric_na_fill_method</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">category_na_fill_method</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">one_hot_encoding</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#MLutils.Preprocess" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Preprocessing data (scaling, imputation, one hot encoding)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scaler</strong> (<em>str</em><em>, </em><em>optional</em>) – Type of scaling to use.</p></li>
+<li><p><strong>numeric_na_fill_method</strong> (<em>str</em><em>, </em><em>optional</em>) – Imputation method for numerical variables. Defaults to None.</p></li>
+<li><p><strong>category_na_fill_method</strong> (<em>srr</em><em>, </em><em>optional</em>) – Imputation method for categorical variables. Defaults to None.</p></li>
+<li><p><strong>one_hot_encoding</strong> (<em>bool</em><em>, </em><em>optional</em>) – Where to encode non-numeric categorical variables. Defaults to True.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="MLutils.Preprocess.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em><span class="sig-paren">)</span><a class="headerlink" href="#MLutils.Preprocess.fit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="MLutils.Preprocess.fit_transform">
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em><span class="sig-paren">)</span><a class="headerlink" href="#MLutils.Preprocess.fit_transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="MLutils.Preprocess.transform">
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#MLutils.Preprocess.transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="MLutils.Regressor">
+<em class="property">class </em><code class="sig-prename descclassname">MLutils.</code><code class="sig-name descname">Regressor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n_jobs</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#MLutils.Regressor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#MLutils.Model" title="MLutils.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">MLutils.Model</span></code></a></p>
+<dl class="py method">
+<dt id="MLutils.Regressor.compute_metrics_and_graphs">
+<code class="sig-name descname">compute_metrics_and_graphs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pred</span></em>, <em class="sig-param"><span class="n">actual</span></em>, <em class="sig-param"><span class="n">output_path</span><span class="o">=</span><span class="default_value">'outputs/plots/mlflow_artifacts'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#MLutils.Regressor.compute_metrics_and_graphs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate model’s performance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pred</strong> (<em>list</em>) – List of predictions</p></li>
+<li><p><strong>actual</strong> (<em>list</em>) – List of labels</p></li>
+<li><p><strong>output_path</strong> (<em>str</em><em>, </em><em>optional</em>) – Path indicating where to store the plots. Defaults to “outputs/plots/mlflow_artifacts”.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="MLutils.Regressor.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#MLutils.Regressor.fit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="MLutils.explain">
+<code class="sig-prename descclassname">MLutils.</code><code class="sig-name descname">explain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">task</span></em>, <em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">'outputs/plots/mlflow_artifacts/shap'</span></em>, <em class="sig-param"><span class="n">n_features</span><span class="o">=</span><span class="default_value">5</span></em><span class="sig-paren">)</span><a class="headerlink" href="#MLutils.explain" title="Permalink to this definition">¶</a></dt>
+<dd><p>explain a model’ decisions based on SHAP value approximation.
+SHAP algorithm is quadratic with the depth of trees.
+-&gt; Be careful not to go over 12 for max_depth.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>DataFrame</em>) – Input data</p></li>
+<li><p><strong>model</strong> (<em>[</em><em>type</em><em>]</em>) – Model to explain</p></li>
+<li><p><strong>task</strong> (<em>str</em>) – Task to perform. Available: regression, classification.</p></li>
+<li><p><strong>path</strong> (<em>str</em><em>, </em><em>optional</em>) – [description]. Defaults to “outputs/plots/mlflow_artifacts/shap”.</p></li>
+<li><p><strong>n_features</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of most important features for which to generate partial dependance plot.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="MLflow.html"
+                        title="previous chapter">MLflow module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/MLutils.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="MLflow.html" title="MLflow module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ASSESS v1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">MLutils module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Patrick Guerin.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+    </div>
+  </body>
+</html>

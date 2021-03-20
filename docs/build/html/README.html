@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASSESS (Automated SignalS Evaluation Service System) &#8212; ASSESS v1.0 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="train module" href="train.html" />
+    <link rel="prev" title="Welcome to ASSESS’s documentation!" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="train.html" title="train module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to ASSESS’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ASSESS v1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ASSESS (Automated SignalS Evaluation Service System)</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="assess-automated-signals-evaluation-service-system">
+<h1>ASSESS (Automated SignalS Evaluation Service System)<a class="headerlink" href="#assess-automated-signals-evaluation-service-system" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>ASSESS allows you to assess the signal in your dataset, understand the important variables and deploy your model in seconds.</p>
+</div></blockquote>
+<div class="section" id="command-line-interface">
+<h2>Command line interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="training-a-model">
+<h3>Training a model<a class="headerlink" href="#training-a-model" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">train</span><span class="o">.</span><span class="n">py</span>
+    <span class="o">--</span><span class="n">label</span> <span class="s2">&quot;label&quot;</span><span class="c1"># the name of the target variable.</span>
+    <span class="o">--</span><span class="n">path</span> <span class="o">../</span><span class="n">data</span><span class="o">/</span><span class="n">iris2</span><span class="o">.</span><span class="n">csv</span> <span class="c1"># path to the dataset csv file.</span>
+    <span class="o">--</span><span class="n">explainmodel</span> <span class="c1"># optional argument, to store plots explaining the model&#39; decisions during the predictive process.</span>
+</pre></div>
+</div>
+<p>example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">train</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">target</span> <span class="s2">&quot;label&quot;</span> <span class="o">--</span><span class="n">path</span> <span class="s2">&quot;../data/iris2.csv&quot;</span> <span class="o">--</span><span class="n">explainmodel</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="monitoring-the-model-via-the-mlflow-ui">
+<h2>Monitoring the model via the MLflow UI<a class="headerlink" href="#monitoring-the-model-via-the-mlflow-ui" title="Permalink to this headline">¶</a></h2>
+<p>Place yourself in the ASSESS/src directory then:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mlflow</span> <span class="n">ui</span>
+</pre></div>
+</div>
+<div class="section" id="generate-predictions">
+<h3>Generate predictions<a class="headerlink" href="#generate-predictions" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">predict</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">path</span> <span class="o">../</span><span class="n">data</span><span class="o">/</span><span class="n">iris2</span><span class="o">.</span><span class="n">csv</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="deploy-the-model-as-a-local-rest-api">
+<h3>Deploy the model as a local REST API<a class="headerlink" href="#deploy-the-model-as-a-local-rest-api" title="Permalink to this headline">¶</a></h3>
+<p>from the ASSESS directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mlflow</span> <span class="n">models</span> <span class="n">serve</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;src\mlruns</span><span class="se">\0\\</span><span class="s2"> :raw-html-m2r:`&lt;model id&gt;`\ </span><span class="se">\a</span><span class="s2">rtifacts\sk_model&quot;</span> <span class="o">-</span><span class="n">p</span> <span class="mi">1234</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="https-query-from-a-python-script">
+<h3>HTTPs query from a Python script<a class="headerlink" href="#https-query-from-a-python-script" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ... define X as the pandas dataframe containing the observations</span>
+<span class="n">http_data</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">&#39;split&#39;</span><span class="p">)</span>
+<span class="n">host</span> <span class="o">=</span> <span class="s1">&#39;127.0.0.1&#39;</span>
+<span class="n">port</span> <span class="o">=</span> <span class="s1">&#39;1234&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;http://</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s1">/invocations&#39;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">http_data</span><span class="p">)</span>
+<span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">text</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">ASSESS (Automated SignalS Evaluation Service System)</a><ul>
+<li><a class="reference internal" href="#command-line-interface">Command line interface</a><ul>
+<li><a class="reference internal" href="#training-a-model">Training a model</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#monitoring-the-model-via-the-mlflow-ui">Monitoring the model via the MLflow UI</a><ul>
+<li><a class="reference internal" href="#generate-predictions">Generate predictions</a></li>
+<li><a class="reference internal" href="#deploy-the-model-as-a-local-rest-api">Deploy the model as a local REST API</a></li>
+<li><a class="reference internal" href="#https-query-from-a-python-script">HTTPs query from a Python script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to ASSESS’s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="train.html"
+                        title="next chapter">train module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/README.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="train.html" title="train module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to ASSESS’s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ASSESS v1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ASSESS (Automated SignalS Evaluation Service System)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Patrick Guerin.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+    </div>
+  </body>
+</html>

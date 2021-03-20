@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>train module &#8212; ASSESS v1.0 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="MLflow module" href="MLflow.html" />
+    <link rel="prev" title="ASSESS (Automated SignalS Evaluation Service System)" href="README.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="MLflow.html" title="MLflow module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="README.html" title="ASSESS (Automated SignalS Evaluation Service System)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ASSESS v1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">train module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-train">
+<span id="train-module"></span><h1>train module<a class="headerlink" href="#module-train" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="train.fit">
+<code class="sig-prename descclassname">train.</code><code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">features</span></em>, <em class="sig-param"><span class="n">target</span></em>, <em class="sig-param"><span class="n">task</span><span class="o">=</span><span class="default_value">'classificaiton'</span></em>, <em class="sig-param"><span class="n">explainmodel</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#train.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>1 - Preprocess the data: impute missing value, normalize if necessary, one-hot encode
+2 - Instanciate  and run a training pipeline performing a grid search along with cross-validation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>DataFrame</em>) – </p></li>
+<li><p><strong>features</strong> (<em>list</em><em>(</em><em>str</em><em>)</em>) – Fea  tures to train the model on</p></li>
+<li><p><strong>target</strong> (<em>str</em>) – Target va  variable</p></li>
+<li><p><strong>task</strong> (<em>str</em><em>, </em><em>optional</em>) – Defaults to ‘classificaiton’.</p></li>
+<li><p><strong>explainmodel</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to explain model</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="train.predict">
+<code class="sig-prename descclassname">train.</code><code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">preprocessing</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#train.predict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>[</em><em>type</em><em>]</em>) – Trained model</p></li>
+<li><p><strong>preprocessing</strong> (<em>[</em><em>type</em><em>]</em>) – Fiited preprocessing pipeline</p></li>
+<li><p><strong>x</strong> (<em>DataFrame</em>) – Input data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[description]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>[list]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="README.html"
+                        title="previous chapter">ASSESS (Automated SignalS Evaluation Service System)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="MLflow.html"
+                        title="next chapter">MLflow module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/train.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="MLflow.html" title="MLflow module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="README.html" title="ASSESS (Automated SignalS Evaluation Service System)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ASSESS v1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">train module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Patrick Guerin.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+    </div>
+  </body>
+</html>
