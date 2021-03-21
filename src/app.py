@@ -65,11 +65,11 @@ def main():
             preds = predict(model, preprocessing, x) 
             data['Predictions'] =  preds      
             st.write('Model trained, launching the MLFlow tracking server...')
-            #Popen("mlflow ui", shell=True)
-            #st.write("[Click here to browse your results](http://localhost:5000)")
+            Popen("mlflow ui", shell=True)
+            st.write("[Click here to browse your results](http://localhost:5000)")
 
-            Popen("mlflow ui --port 443", shell=True)
-            st.write("[Click here to browse your results](https://assess-your-data.herokuapp.com:443)")
+            #Popen("mlflow ui --port 443", shell=True)
+            #st.write("[Click here to browse your results](https://assess-your-data.herokuapp.com:443)")
 
 
 def get_download_link(df):
@@ -157,7 +157,7 @@ def get_download_link(df):
 
     return dl_link
 
-
+# not needed for gcp deployment
 if __name__ == '__main__':
     main()
 
