@@ -1,6 +1,6 @@
 # ASSESS (Automated SignalS Evaluation Service System)
 
- ASSESS allows you to assess the signal in your dataset, understand the important variables and deploy your model in seconds.
+ ASSESS allows you to assess the signal in your dataset, Identify the important variables and deploy your model in seconds.
 
 ![](backend_schema.PNG)
 
