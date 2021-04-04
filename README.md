@@ -4,11 +4,11 @@
 
 ## Demo 
 
-[![Watch the demo](thumbnail.PNG)](
+[![Watch the demo](assets/thumbnail.PNG)](
 https://user-images.githubusercontent.com/34417947/113521205-429bb380-9598-11eb-8508-48edd8b7127b.mp4)
 
 
-![](backend_schema.PNG)
+![](assets/backend_schema.PNG)
 
 
 
