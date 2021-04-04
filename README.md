@@ -2,7 +2,7 @@
 
  ASSESS allows you to assess the signal in your dataset, understand the important variables and deploy your model in seconds.
 
-!()[backend_schema.PNG]
+![backend_schema.PNG]()
 
 
 
