@@ -19,6 +19,7 @@ streamlit run src/app.py
 
 ## Sphinx documentation
 
+https://assesss.readthedocs.io/en/latest/
 
 ## Command line interface
 
