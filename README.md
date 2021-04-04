@@ -4,6 +4,7 @@
 
 ## Demo 
 
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/vt5fpE0bzSY)
 
 ![](https://user-images.githubusercontent.com/34417947/113518106-7e2c8280-9584-11eb-8179-2bebf31dabce.mp4)
 
