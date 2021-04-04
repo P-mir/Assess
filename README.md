@@ -4,7 +4,8 @@
 
 ## Demo 
 
-[![Watch the demo](thumbnail.PNG)](https://user-images.githubusercontent.com/34417947/113518106-7e2c8280-9584-11eb-8179-2bebf31dabce.mp4)
+[![Watch the demo](thumbnail.PNG)](
+https://user-images.githubusercontent.com/34417947/113521205-429bb380-9598-11eb-8508-48edd8b7127b.mp4)
 
 
 ![](backend_schema.PNG)
