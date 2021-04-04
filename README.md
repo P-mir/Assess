@@ -4,11 +4,16 @@
 
 ()[backend_schema.PNG]
 
+
+
 ## Web application
 
-link
+'''
+		streamlit run src/app.py
+'''
 
-documentation:
+## Sphinx documentation
+
 
 ## Command line interface
 
@@ -24,7 +29,7 @@ documentation:
 example:
 
 '''
-		python train.py --target "label" --path "../data/iris2.csv" --explainmodel
+		python src/train.py --target "label" --path "../data/iris2.csv" --explainmodel
 '''
 
 ### Monitoring the model via the MLflow UI
@@ -38,7 +43,7 @@ Place yourself in the ASSESS/src directory then:
 ### Generate predictions
 
 '''
-		python predict.py --path ../data/iris2.csv
+		python src/predict.py --path ../data/iris2.csv
 '''
 
 ### Deploy the model as a local REST API
